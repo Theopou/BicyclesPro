@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Free Multipurpose Template : RUMA</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />    
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+<body >
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Vélo'v</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+					<li><a href="abonnement.html">Les abonnements</a></li>
+                    <li><a href="stations.html">Les stations</a></li>
+                    <li><a href="compte.html">Mon compte</a></li> 
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+	
+   <!--/.NAVBAR END-->
+        
+       <section id="home" class="text-center">
+       <!--/.SLIDESHOW END-->  
+                <img class="img" src="assets/img/velov.jpg" alt="" />
+           
+       </section>
+	   
+	   
+	    <!--/.CONNEXION MYSQL-->
+	   <section id="connexion">
+            <div class="container">
+           <div class="row text-center" >
+            <div class="col-md-12">
+			
+	   <h4>TEST DE CONNEXION VERS MYSQL</h4>
+			
+			<?php
+			
+		
+			//Connexion à MYSQL
+			$servername = "127.0.0.1";
+			$username = "root";
+			$password = "root";
+			$bdd = "pfr";
+
+			// Creation de la connexion
+			$db = new mysqli($servername, $username, $password, $bdd);
+			
+			if ($db->connect_error) {
+				die("Erreur de connexion: " . $db->connect_error);
+			} 
+			echo "Connexion à MYSQL réussie \n";
+		
+			//Création de la requete
+			$req = "SELECT * FROM personne";
+
+			 
+			//Envoi de la requete
+			$res = $db->query($req);
+			 
+			// on va scanner tous les tuples un par un
+			echo "<table>";
+			echo "Affichage de la requete : \n";
+			while ($data = mysqli_fetch_array($res)) 
+			{
+				//Affichage
+				echo "<tr><td>".$data['PRENOM_PERSONNE']."</td><td>".$data['NOM_PERSONNES']."</td></tr>";
+			}
+			echo "</table>";
+		
+			?>
+		
+			
+			
+    <!--/.SLIDESHOW END-->
+
+
+	
+        <section id="intro">
+            <div class="container">
+           <div class="row text-center" >
+            <div class="col-md-16">
+            <div style="text-align:justify;">
+                
+				<p>
+                Bienvenue sur le site du service de location de vélo'v proposé par le Grand Lyon.
+				Vélo’v c'est un moyen pour tous de se rendre sur son lieu de travail en admirant les joyeux lyonnais.
+				Vous trouverez un grand nombre de <a href="stations.html">stations</a> disponibles 24h/24 et 7jours/7.
+				Ce service est accessible dès 14 ans. Chaque station est équipée d’une borne avec écran tactile pour accéder 
+				aux différentes offres et d’une série de points d’attache pour ranger les vélos. Quelle que soit l’offre sélectionnée, les 30 premières minutes d’utilisation sont gratuites à chaque nouveau trajet ! De plus, n’oubliez pas que notre assistance en ligne est disponible à tout moment pour répondre à toutes vos questions concernant le Velo’V à Lyon.
+                </p>
+                            
+                    
+                     <div class="row text-center" >
+					 <div class="col-md-16">
+                        <img class="img-circle" src="assets/img/repar.jpg" alt="" />
+                           <h3><strong>Un problème ? Pas de panique ! Nous sommes là pour vous aider</strong> </h3>
+                       <p>
+                        Vous pouvez déclarer un incident
+                       </p>
+                            
+                    </div>
+					
+                    
+						</div>
+
+</div>
+                        </div>
+                     </div>
+                      
+                 </div>
+                
+            </div>
+               
+               </div>
+        </div>
+        </section>
+
+    
+      <!--/.OFFFER END-->
+         <section id="just-intro">
+             <div class="container">
+             <div class="row text-center pad-row">
+            <div class="col-md-4  col-sm-4">
+                 <i class="fa fa-desktop fa-5x"></i>
+                            <h4><strong> <a href="incident.html">Un incident ?</a></strong> </h4>
+                            <p>
+                                Nos équipes s'occupent de vous ! Rendez-vous sur cette page afin de déclarer 
+								un incident technique.
+                            </p>
+                          
+                </div>
+             
+            <div class="col-md-4  col-sm-4">
+                  <i class="fa fa-pencil  fa-5x"></i>
+                            <h4> <strong>Sure Quique Menu</strong> </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                       <a href="#" class="btn btn-primary" >Read Details</a>    
+                </div>
+                    
+            </div>
+                 </div>
+         </section>
+     <!--/.JUST-INTRO END-->
+     <section  class="note-sec" >
+         
+               <div class="container">
+           <div class="row text-center pad-row" >
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
+                <i class="fa fa-quote-left fa-3x"></i>
+               <p>
+                     Bien plus qu'un service, le vélo'v vous permet également de faire du sport tout en s'amusant !
+					 Nous vous conseillons toutefois de porter un casque pour votre sécurité.
+                            </p>
+                </div>
+               </div>
+            </div>   
+           
+       </section>
+    <!--/.NOTE END-->
+     <section id="clients"  >
+        
+                
+            <div class="container">
+           <div class="row text-center pad-bottom" >
+            <div class="col-md-12">
+                
+				<h4> <strong>REJOIGNEZ-NOUS</strong> </h4>
+                   <p>
+                     <a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
+                        <a href="https://twitter.com/"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
+                        <a href="https://linkedin.com/"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
+                       <a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
+                   </p>
+            </div>
+               
+               </div>
+        </div>
+        </section>
+     <!--/.CLIENTS END-->
+    <section id="footer-sec" >
+             
+            <div class="container">
+           <div class="row  pad-bottom" >
+            <div class="col-md-4">
+               
+                </div>
+               
+               <div class="col-md-10">
+			   <img src="assets/img/iae_lyon.png" style="float:right;">
+                   <h4> <strong>Où nous trouvez ?</strong> </h4>
+                            <p>
+                              IAE LYON <br />
+							  6 Cours Albert Thomas <br />
+                               69008 Lyon  <br />
+							  
+                            </p>
+                    
+                </div>
+               </div>
+            </div>
+    </section>         
+    <!--/.FOOTER END-->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="assets/plugins/bootstrap.js"></script>
+  <!-- CUSTOM SCRIPTS  -->
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
